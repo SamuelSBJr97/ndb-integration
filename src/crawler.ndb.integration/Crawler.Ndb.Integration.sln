@@ -2,15 +2,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36221.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawler.Ndb.Integration.AppHost", "ndb-integration.AppHost\Crawler.Ndb.Integration.AppHost.csproj", "{FACE4775-343C-49FA-8ECD-15DABA888FCD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawler.Ndb.Integration.AppHost", "crawler.ndb.AppHost\Crawler.Ndb.Integration.AppHost.csproj", "{FACE4775-343C-49FA-8ECD-15DABA888FCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawler.Ndb.Integration.ServiceDefaults", "ndb-integration.ServiceDefaults\Crawler.Ndb.Integration.ServiceDefaults.csproj", "{8A7BA845-837F-A02E-A3BA-A9F4E6177F69}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawler.Ndb.Integration.ServiceDefaults", "crawler.ndb.ServiceDefaults\Crawler.Ndb.Integration.ServiceDefaults.csproj", "{8A7BA845-837F-A02E-A3BA-A9F4E6177F69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawler.Ndb.Integration.ApiService", "ndb-integration.ApiService\Crawler.Ndb.Integration.ApiService.csproj", "{BDF8F1BB-6E22-D166-633B-1DE24DB0F667}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawler.Ndb.Integration.ApiService", "crawler.ndb.ApiService\Crawler.Ndb.Integration.ApiService.csproj", "{BDF8F1BB-6E22-D166-633B-1DE24DB0F667}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawler.Ndb.Integration.Web", "ndb-integration.Web\Crawler.Ndb.Integration.Web.csproj", "{B708C081-DEA6-8A05-5601-73175F02718E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawler.Ndb.Integration.Web", "crawler.ndb.Web\Crawler.Ndb.Integration.Web.csproj", "{B708C081-DEA6-8A05-5601-73175F02718E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawler.Ndb.Integration.Tests", "ndb-integration.Tests\Crawler.Ndb.Integration.Tests.csproj", "{DDC5D628-CD8E-1D69-E577-E91660B02549}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawler.Ndb.Integration.Tests", "crawler.ndb.Tests\Crawler.Ndb.Integration.Tests.csproj", "{DDC5D628-CD8E-1D69-E577-E91660B02549}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

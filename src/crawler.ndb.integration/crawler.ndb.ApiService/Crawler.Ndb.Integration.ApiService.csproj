@@ -7,11 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ndb-integration.ServiceDefaults\Crawler.Ndb.Integration.ServiceDefaults.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Aspire.StackExchange.Redis.OutputCaching" Version="9.0.0" />
+    <ProjectReference Include="..\crawler.ndb.integration.ServiceDefaults\Crawler.Ndb.Integration.ServiceDefaults.csproj" />
   </ItemGroup>
 
 </Project>
