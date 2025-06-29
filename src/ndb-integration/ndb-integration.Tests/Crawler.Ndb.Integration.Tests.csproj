@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ndb-integration.AppHost\ndb-integration.AppHost.csproj" />
+    <ProjectReference Include="..\ndb-integration.AppHost\Crawler.Ndb.Integration.AppHost.csproj" />
   </ItemGroup>
 
   <ItemGroup>
