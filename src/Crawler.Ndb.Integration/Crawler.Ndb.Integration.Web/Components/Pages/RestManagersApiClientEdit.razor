@@ -1,0 +1,61 @@
+@page "/restmanagers-client-edit/{Id:guid}"
+@inject Crawler.Ndb.Integration.Web.Services.RestManagersApiClient ApiClient
+@using Crawler.Ndb.Integration.Web.Domain.RestManager.Model
+
+<PageTitle>Edit REST Manager (API Client)</PageTitle>
+
+<h1>Edit REST Manager (API Client)</h1>
+
+@if (restManager is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <EditForm Model="restManager" OnValidSubmit="UpdateRestManager">
+        <DataAnnotationsValidator />
+        <ValidationSummary class="text-danger" role="alert"/>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <InputText id="name" @bind-Value="restManager.Name" class="form-control" />
+            <ValidationMessage For="() => restManager.Name" class="text-danger" />
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description:</label>
+            <InputText id="description" @bind-Value="restManager.Description" class="form-control" />
+            <ValidationMessage For="() => restManager.Description" class="text-danger" />
+        </div>
+        <div class="mb-3">
+            <label for="methods" class="form-label">Methods (comma separated):</label>
+            <InputText id="methods" @bind-Value="methodsInput" class="form-control" />
+            <ValidationMessage For="() => methodsInput" class="text-danger" />
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </EditForm>
+    @if (successMessage is not null)
+    {
+        <div class="alert alert-success mt-3">@successMessage</div>
+    }
+}
+
+@code {
+    [Parameter]
+    public Guid Id { get; set; }
+    private RestManager? restManager;
+    private string methodsInput = string.Empty;
+    private string? successMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        restManager = await ApiClient.GetByIdAsync(Id);
+        methodsInput = restManager is not null ? string.Join(", ", restManager.Methods ?? Array.Empty<string>()) : string.Empty;
+    }
+
+    private async Task UpdateRestManager()
+    {
+        if (restManager is null) return;
+        restManager.Methods = methodsInput.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+        await ApiClient.UpdateAsync(restManager);
+        successMessage = "REST Manager updated successfully!";
+    }
+}

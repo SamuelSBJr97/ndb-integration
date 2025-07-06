@@ -1,0 +1,57 @@
+@page "/restmanagers-client"
+@inject Crawler.Ndb.Integration.Web.Services.RestManagersApiClient ApiClient
+
+<PageTitle>REST Managers (API Client)</PageTitle>
+
+<h1>REST Managers (API Client)</h1>
+
+@if (restManagers is null)
+{
+    <p><em>Loading...</em></p>
+}
+else if (!restManagers.Any())
+{
+    <p>No REST managers found.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Methods</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var restmanager in restManagers)
+            {
+                <tr>
+                    <td>@restmanager.Name</td>
+                    <td>@restmanager.Description</td>
+                    <td>@string.Join(", ", restmanager.Methods ?? Array.Empty<string>())</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" @onclick="() => Delete(restmanager.Id)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Crawler.Ndb.Integration.Web.Domain.RestManager.Model.RestManager>? restManagers;
+
+    protected override async Task OnInitializedAsync()
+    {
+        restManagers = await ApiClient.GetAllAsync();
+    }
+
+    private async Task Delete(Guid id)
+    {
+        await ApiClient.DeleteAsync(id);
+        restManagers = await ApiClient.GetAllAsync();
+        StateHasChanged();
+    }
+}

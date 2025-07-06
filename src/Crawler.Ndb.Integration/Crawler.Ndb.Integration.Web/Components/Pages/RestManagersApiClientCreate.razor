@@ -1,0 +1,48 @@
+@page "/restmanagers-client-create"
+@inject Crawler.Ndb.Integration.Web.Services.RestManagersApiClient ApiClient
+@using Crawler.Ndb.Integration.Web.Domain.RestManager.Model
+
+<PageTitle>Create REST Manager (API Client)</PageTitle>
+
+<h1>Create REST Manager (API Client)</h1>
+
+<EditForm Model="restManager" OnValidSubmit="CreateRestManager">
+    <DataAnnotationsValidator />
+    <ValidationSummary class="text-danger" role="alert"/>
+    <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <InputText id="name" @bind-Value="restManager.Name" class="form-control" />
+        <ValidationMessage For="() => restManager.Name" class="text-danger" />
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description:</label>
+        <InputText id="description" @bind-Value="restManager.Description" class="form-control" />
+        <ValidationMessage For="() => restManager.Description" class="text-danger" />
+    </div>
+    <div class="mb-3">
+        <label for="methods" class="form-label">Methods (comma separated):</label>
+        <InputText id="methods" @bind-Value="methodsInput" class="form-control" />
+        <ValidationMessage For="() => methodsInput" class="text-danger" />
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</EditForm>
+
+@if (successMessage is not null)
+{
+    <div class="alert alert-success mt-3">@successMessage</div>
+}
+
+@code {
+    private RestManager restManager = new();
+    private string methodsInput = string.Empty;
+    private string? successMessage;
+
+    private async Task CreateRestManager()
+    {
+        restManager.Methods = methodsInput.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+        await ApiClient.CreateAsync(restManager);
+        successMessage = "REST Manager created successfully!";
+        restManager = new();
+        methodsInput = string.Empty;
+    }
+}
