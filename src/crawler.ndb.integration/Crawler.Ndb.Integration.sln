@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36221.1 d17.14
+VisualStudioVersion = 17.14.36221.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawler.Ndb.Integration.AppHost", "Crawler.Ndb.Integration.AppHost\Crawler.Ndb.Integration.AppHost.csproj", "{FC32E214-D9F3-400F-BDD2-1D37658C8E74}"
 EndProject
@@ -11,6 +11,16 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawler.Ndb.Integration.Web", "Crawler.Ndb.Integration.Web\Crawler.Ndb.Integration.Web.csproj", "{787190F3-40A8-D41D-8AB0-15C254EE86E4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawler.Ndb.Integration.Tests", "Crawler.Ndb.Integration.Tests\Crawler.Ndb.Integration.Tests.csproj", "{5CC052E1-C253-5089-D382-3C60F2A4526E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawler.Ndb.Integration.Domain", "Crawler.Ndb.Integration.Domain\Crawler.Ndb.Integration.Domain.csproj", "{97D37678-28AB-450B-B88D-CBC57AE98ECE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{A8552341-8E50-40A7-926D-E9D1B09A6532}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Base", "Base", "{FE63D07D-9F6D-4A48-98BC-F8B336F79397}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{BC78B4B6-8CBB-46C4-A7ED-BC83A9142552}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,9 +48,21 @@ Global
 		{5CC052E1-C253-5089-D382-3C60F2A4526E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CC052E1-C253-5089-D382-3C60F2A4526E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CC052E1-C253-5089-D382-3C60F2A4526E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97D37678-28AB-450B-B88D-CBC57AE98ECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97D37678-28AB-450B-B88D-CBC57AE98ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97D37678-28AB-450B-B88D-CBC57AE98ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97D37678-28AB-450B-B88D-CBC57AE98ECE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FC32E214-D9F3-400F-BDD2-1D37658C8E74} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{0B86917E-F12A-524F-27BD-EF763B354C2E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{6B83A981-1E92-61A9-8B34-DC0A22902398} = {BC78B4B6-8CBB-46C4-A7ED-BC83A9142552}
+		{787190F3-40A8-D41D-8AB0-15C254EE86E4} = {A8552341-8E50-40A7-926D-E9D1B09A6532}
+		{5CC052E1-C253-5089-D382-3C60F2A4526E} = {FE63D07D-9F6D-4A48-98BC-F8B336F79397}
+		{97D37678-28AB-450B-B88D-CBC57AE98ECE} = {FE63D07D-9F6D-4A48-98BC-F8B336F79397}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A1C5E627-08A6-4760-B670-E62720DAD799}
